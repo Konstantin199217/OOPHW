@@ -1,23 +1,46 @@
 package OOPSem.src;
 
 public class HwOop1 {
-    public static void main(String[] args) {
-        Car2 car1 = new Car2("Волга", 1975, 200.0, "Синяя", 2);
-        Car2 car2 = new Car2("Нива", 1975, 200.0, "Белая", 4);
-        Car2 car3 = new Car2("Жигули", 1975, 200.0, "Красный", 2);
-        Car2 car4 = new Car2("УАЗ", 1975, 200.0, "Зеленый", 4);
+    //    public static void main(String[] args) {
+//        Car2 car1 = new Car2("Волга", 1975, 200.0, "Синяя", 2);
+//        Car2 car2 = new Car2("Нива", 1975, 200.0, "Белая", 4);
+//        Car2 car3 = new Car2("Жигули", 1975, 200.0, "Красный", 2);
+//        Car2 car4 = new Car2("УАЗ", 1975, 200.0, "Зеленый", 4);
+//
+//        Race race = new Race();
+//        race.setRoad(1000);
+//        race.addRace(car1);
+//        race.addRace(car2);
+//        race.addRace(car3);
+//        race.addRace(car4);
+//
+//        System.out.println(race.toString());
+//
+//        race.go();
+//
+//    }
+    public static void main(String[] args) throws Exception {
+        Book book = new Book("Крадущийся в тенях", "Пехов Алексей");
+        Book book1 = new Book("Вонг озеро", "Вагнер Яна");
+        Book book2 = new Book("Врата судьбы", "Кристи Агата");
 
-        Race race = new Race();
-        race.setRoad(1000);
-        race.addRace(car1);
-        race.addRace(car2);
-        race.addRace(car3);
-        race.addRace(car4);
+        Closet cl = new Closet();
+        cl.addBook(book);
+        cl.addBook(book1);
+        cl.addBook(book2);
 
-        System.out.println(race.toString());
+        cl.remove(book2);
 
-        race.go();
+        System.out.println(cl);
+        System.out.println("Колличество книг: " + cl.quantity());;
 
+        try {
+//            System.out.println(cl.getBook("Вонг озеро"));
+            System.out.println(cl.getBook("Вонг "));
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }
 
