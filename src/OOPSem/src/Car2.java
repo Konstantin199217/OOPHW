@@ -2,24 +2,22 @@ package OOPSem.src;
 
 import java.util.Random;
 
-public class Car {
-    String model;
-    int year;
-    double price;
-    String color;
-    int power;
-    boolean status;
-    int speed;
+public class Car2 {
+    private String model;
+    private int year;
+    private double price;
+    private String color;
+    private int power;
+    private int speed;
 
 
-    public Car(String model, int year, double price, String color, int power) {
+    public Car2(String model, int year, double price, String color, int power) {
         Random random = new Random();
         this.model = model;
         this.year = year;
         this.price = price;
         this.color = color;
         this.power = power;
-        this.status = false;
         this.speed = random.nextInt(5, 101);
 
     }
@@ -68,13 +66,20 @@ public class Car {
         return power;
     }
 
-    public void compare(Car car){
-        if(this.power > car.power){
-            System.out.println(this.model + " мощнее");
-        }else {
-            System.out.println(car.model + " мощнее");
-        }
+    public int getSpeed() {
+        return speed;
     }
 
-
+    @Override
+    public String toString() {
+        return model + '\'' +
+                " " + year + '\'' +
+                " " + price + '\'' +
+                " " + color + '\'' +
+                " " + power + '\'' +
+                " " + speed
+                ;
+    }
 }
+
+
